@@ -9,9 +9,8 @@ public class Prg_07_GenericMethod {
 //		}
 //	}
 
-	public static <t> void printData(t[] arr) // Type-Safe				Generic Method 
-	{
-		for (t array : arr) {
+	public static <t> void printData(t[] arr) {			// Generic method		// Type Safe 
+		for(t array : arr) {
 			System.out.println(array);
 		}
 	}

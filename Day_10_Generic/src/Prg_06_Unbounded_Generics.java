@@ -2,8 +2,10 @@ import java.util.Date;
 
 public class Prg_06_Unbounded_Generics {
 
-//	public static void print(Box2<?> b)
-//	public static void print(Box2<? extends Number> b)		Upper Bond 
+//	public static void print(Box2<?> b)						//Anything From Box2
+	
+//	public static void print(Box2<? extends Number> b)		//Upper Bond 
+	
 	public static void print(Box2<? super Integer> b)		// Lower Bond
 	{
 		Object obj = b.getBox();
