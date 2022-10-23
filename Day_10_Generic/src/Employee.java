@@ -3,7 +3,7 @@ class Employee implements Comparable<Employee> {
 	String name;
 	double sal;
 
-//	This is must when you declare your own class
+//	This is must when you declare your own class  for using Comparable
 	@Override
 	public int compareTo(Employee other) {
 		return this.empno - other.empno;

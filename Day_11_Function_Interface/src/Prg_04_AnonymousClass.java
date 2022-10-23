@@ -10,16 +10,23 @@ public class Prg_04_AnonymousClass {
 	}
 
 	public static void main(String[] args) {
-		Emp1[] arr = { new Emp1(101, "Sagar", 89.99), new Emp1(105, "Sush", 99.99), new Emp1(103, "Anukesh", 89.99),
-				new Emp1(102, "Saurabh", 85.50), new Emp1(104, "Akshay", 80.40) };
-		Comparator<Emp1> cmp = new Comparator<Emp1>() {
+		Emp1[] arr = { 
+						new Emp1(101, "Sagar", 89.99), 
+						new Emp1(105, "Sush", 99.99), 
+						new Emp1(103, "Anukesh", 89.99),
+						new Emp1(102, "Saurabh", 85.50), 
+						new Emp1(104, "Akshay", 80.40) };
+		
+//		rollComparator cmp = new rollComparator();
+		
+		System.out.println("Sort By Roll no : ");
+		
+		Arrays.sort(arr, new Comparator<Emp1>() {		// This also work
 			@Override
-			public int compare(Emp1 o1, Emp1 o2) {
-				return o1.getRoll() - o2.getRoll();
+			public int compare(Emp1 e1, Emp1 e2) {
+				return e1.getRoll() - e2.getRoll();
 			}
-		};
-
-		Arrays.sort(arr, cmp);
+		});
 
 		for (Emp1 e : arr) {
 			System.out.println(e);
@@ -27,13 +34,14 @@ public class Prg_04_AnonymousClass {
 
 		System.out.println("Sort by Name :");
 
+
 		Arrays.sort(arr, new Comparator<Emp1>() {
 			@Override
-			public int compare(Emp1 o1, Emp1 o2) {
-				return o1.getName().compareTo(o2.getName());
+			public int compare(Emp1 e1, Emp1 e2) {
+				return e1.getName().compareTo(e2.getName());
 			}
 		});
-
+		
 		for (Emp1 e : arr) {
 			System.out.println(e);
 		}
@@ -42,7 +50,7 @@ public class Prg_04_AnonymousClass {
 		Arrays.sort(arr, new Comparator<Emp1>() {
 			@Override
 			public int compare(Emp1 o1, Emp1 o2) {
-				return (int) Math.signum(o1.getMarks() - o2.getMarks());   // Use For Double
+				return (int) Math.signum(o1.getMarks() - o2.getMarks());
 			}	
 		});
 		
@@ -52,13 +60,19 @@ public class Prg_04_AnonymousClass {
 		}
 	}
 }
+//class rollComparator implements Comparator<Emp1>{
+//	@Override
+//	public int compare(Emp1 o1, Emp1 o2) {
+//		return o1.getRoll() - o2.getRoll();
+//	}
+//}
 
-class Emp {
+class Emp1 {
 	int roll;
 	String name;
 	double marks;
 
-	public Emp(int roll, String name, double marks) {
+	public Emp1(int roll, String name, double marks) {
 		this.roll = roll;
 		this.name = name;
 		this.marks = marks;

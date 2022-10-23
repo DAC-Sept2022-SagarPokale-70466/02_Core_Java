@@ -11,7 +11,7 @@ class Parent {
 }
 
 class child extends Parent implements one{
-		// No one error as in multiple implementation 
+	// No one error as in multiple implementation 
 	// Inside this the parent function will run 
 	// Because SuperClass wins interface Clashes
 	

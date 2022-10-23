@@ -1,3 +1,5 @@
+import java.util.Objects;
+
 public class Distance {
 	private int feet;
 	private int inches;
@@ -97,4 +99,5 @@ class Emp {
 		return this.empno == other.empno;
 	}
 
+	
 }

@@ -11,8 +11,13 @@ public class Prg_08_Comparable {
 //		int cmp = e.compareTo(e2);
 //		System.out.println(cmp);
 
-		Employee[] arr = { new Employee(5, "S", 823.45), new Employee(6, "H", 623.30), new Employee(2, "A", 120.39),
-				new Employee(3, "H", 983.42), new Employee(1, "B", 623.80), new Employee(4, "H", 723.39) };
+		Employee[] arr = { 
+							new Employee(5, "S", 823.45), 
+							new Employee(6, "H", 623.30), 
+							new Employee(2, "A", 120.39),
+							new Employee(3, "H", 983.42), 
+							new Employee(1, "B", 623.80), 
+							new Employee(4, "H", 723.39) };
 
 //		====================================================================
 
