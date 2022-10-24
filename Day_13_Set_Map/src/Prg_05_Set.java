@@ -1,14 +1,14 @@
+import java.util.HashSet;
 import java.util.Iterator;
 import java.util.Set;
-import java.util.TreeSet;
 
 public class Prg_05_Set {
 
 	public static void main(String[] args) {
 
-//		Set<Integer> set = new HashSet<>(10);			// stored in order as per their hash code
+		Set<Integer> set = new HashSet<>(10);			// stored in order as per their hash code
 //		Set<Integer> set = new LinkedHashSet<>(); 	// stored in order of the insertion
-		Set<Integer> set = new TreeSet<>(); 			// stored in sorted order
+//		Set<Integer> set = new TreeSet<>(); 			// stored in sorted order
 		
 		set.add(23);
 		set.add(76);
@@ -23,13 +23,19 @@ public class Prg_05_Set {
 		set.add(22);
 		set.add(33);
 
-		System.out.println("Set : ");
+		System.out.println("Set : Using For Loop : ");
 		for(Integer i : set)
 			System.out.println(i);
 		
-		Iterator<Integer> itr = set.iterator();
+		System.out.println("Using the forEach Method : ");
 		
-		System.out.println("Using Iterator");
+		set.forEach(i -> System.out.println(i));
+		
+//		set.remove(22);
+
+		System.out.println("Using the Iterator : ");
+		
+		Iterator<Integer> itr = set.iterator();
 		
 		while(itr.hasNext()) {
 			System.out.println(itr.next());

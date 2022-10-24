@@ -1,34 +1,52 @@
+import java.util.Iterator;
+import java.util.LinkedHashSet;
 import java.util.Objects;
-import java.util.TreeSet;
 
 public class Prg_07_HashSet_LinkedSet_TreeSet {
 
 	public static void main(String[] args) {
 
-//		 HashSet<Student> set = new HashSet<>();
-		// LinkedHashSet<Student> set = new LinkedHashSet<>();
-		TreeSet<Student> set = new TreeSet<>();
+// 		TYPES OF SETS : 
+		
+//		HashSet<Student> set = new HashSet<>();
+		LinkedHashSet<Student> set = new LinkedHashSet<>();
+//		TreeSet<Student> set = new TreeSet<>();
+
 		set.add(new Student(33, "S5", 77.7));
 		set.add(new Student(55, "S2", 88.8));
 		set.add(new Student(11, "S4", 44.4));
 		set.add(new Student(44, "S1", 99.9));
 		set.add(new Student(22, "S3", 55.5));
 		set.add(new Student(11, "S4", 44.4));
-		
+
 		// duplicates are not allowed (in HashSet & LinkedHashSet) -- if equals() is implemented
 		// duplicates are not allowed (in TreeSet) -- if Comparable.compareTo() is implemented
-		
+
+		System.out.println("Using the ForEach Method");
 		set.forEach(i -> System.out.println(i));
-		System.out.println("Number of elements: " + set.size());
+		System.out.println("Size of Set : "+set.size());
 		
-//		Iterator<Student> itr = set.iterator();
-//		while(itr.hasNext()) {
-//			System.out.println(itr.next());
-//		}
+		System.out.println("Using the interator Method");
+		Iterator<Student> itr = set.iterator();
+		
+		while(itr.hasNext())
+			System.out.println(itr.next());
+		System.out.println("Size of Set : "+set.size());
+		
+//		==============================================================
+		
+		System.out.println("Removing the element");
+		LinkedHashSet<Student> rm = new LinkedHashSet<Student>();
+		rm.add(new Student(22,"",0.0));
+//		set.removeAll(rm);							// This will remove From the Collection 
+//		set.remove(new Student(22,"",0.0));			// remove will remove from specific Object
+		set.forEach(i -> System.out.println(i));
+		System.out.println("Size of Set : "+set.size());
+		
 	}
 }
 
-class Student implements Comparable<Student>{
+class Student implements Comparable<Student> {
 	private int roll;
 	private String name;
 	private double marks;
@@ -86,12 +104,13 @@ class Student implements Comparable<Student>{
 	public boolean equals(Object obj) {
 		if (this == obj)
 			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
+		if (!(obj instanceof Student))
 			return false;
 		Student other = (Student) obj;
 		return roll == other.roll;
 	}
+	
+
+	
 
 }

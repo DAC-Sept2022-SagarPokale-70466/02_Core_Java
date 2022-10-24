@@ -14,8 +14,8 @@ public class Prg_07_Stream {
 
 	public static void main(String[] args) {
 
-		List<Integer> list = new ArrayList<Integer>(); // Stream of Collections
-		Stream<Integer> stm = list.stream();
+		List<Integer> list = new ArrayList<Integer>(); 
+		Stream<Integer> stm = list.stream();			// Stream of Collections
 
 		Integer[] arr = { 11, 22, 33, 44, 55, 66, 77, 88, 99 };
 		Stream<Integer> stm2 = Stream.of(arr); // Stream of Arrays

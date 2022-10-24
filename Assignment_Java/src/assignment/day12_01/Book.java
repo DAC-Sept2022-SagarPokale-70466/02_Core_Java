@@ -1,4 +1,4 @@
-package assignment.day11_02;
+package assignment.day12_01;
 
 import java.util.Objects;
 
@@ -136,8 +136,7 @@ public class Book implements Comparable<Book> {
 //		break;
 //	case 3:
 //		System.out.println("Print all Details in Reverse Direction");
-//		ListIterator<Book> revList = list.listIterator(list.size()); // For traversing from last specify the
-//																		// size
+//		ListIterator<Book> revList = list.listIterator(list.size()); // For traversing from last specify the size
 //		while (revList.hasPrevious()) {
 //			Book num = revList.previous();
 //			System.out.println(num);
