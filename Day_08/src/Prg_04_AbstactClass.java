@@ -9,8 +9,9 @@ public class Prg_04_AbstactClass {
 		ss.method1();
 		ss.method2();
 
-		SubClass sb = (SubClass) ss;
-		sb.method3();
+		
+//		SubClass sb = (SubClass) ss;
+//		sb.method3();
 	}
 
 }

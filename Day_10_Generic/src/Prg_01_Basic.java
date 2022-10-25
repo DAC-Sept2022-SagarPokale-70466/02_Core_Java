@@ -11,7 +11,6 @@ public class Prg_01_Basic {
 		
 //		String s = (String) c1.get();					// ClassCastException
 		Integer i = (Integer) c1.get();			// Down-Casting Is Done here 
-		System.out.println(c1.get());
 	}
 
 }
