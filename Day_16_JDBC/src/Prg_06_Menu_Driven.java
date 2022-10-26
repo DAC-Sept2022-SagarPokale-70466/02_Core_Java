@@ -34,7 +34,7 @@ public class Prg_06_Menu_Driven {
 		String dname, dloc;
 		Dept d;
 		Scanner sc = new Scanner(System.in);
-		List<Dept> list;
+		List<Dept> list = null;
 		do {
 			System.out.println(
 					"\n0.   EXIT\n1.   Add Dept\n2.   Display all\n3.   Find Dept\n4.   Update Dept\n5.   Delete Dept\nEnter Choice : ");

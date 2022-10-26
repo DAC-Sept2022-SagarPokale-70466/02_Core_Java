@@ -42,8 +42,7 @@ public class StoredProcedure_IN_OUT {
 
 		try (Connection con = DriverManager.getConnection(DB_URL, DB_USER, DB_PASSWORD)) {
 			String sql = "call sp_depttotalsal(?, ?)";
-			try (CallableStatement stmt = con.prepareCall(sql)) { // create a CallableStatement to execute the stored
-																	// procedure
+			try (CallableStatement stmt = con.prepareCall(sql)) { // create a CallableStatement to execute the stored procedure
 				stmt.setInt(1, deptno); // set all in-params
 				stmt.registerOutParameter(2, Types.DOUBLE); // register all out-params // Types : The class that defines
 															// the constants that are used to identify genericSQL types,

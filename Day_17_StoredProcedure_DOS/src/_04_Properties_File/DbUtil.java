@@ -53,5 +53,4 @@ public class DbUtil {
 		Connection con = DriverManager.getConnection(DB_URL, DB_USER, DB_PW);
 		return con;
 	}
-
 }

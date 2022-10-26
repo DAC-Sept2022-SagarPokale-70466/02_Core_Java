@@ -16,19 +16,26 @@ import java.util.Scanner;
 public class DeptDao implements AutoCloseable { // becaus DeptDao instace is used in try with resource
 
 	private Connection con;
-	private PreparedStatement stmtFindAll;
-	private PreparedStatement stmtFindById;
 
 	DeptDao() throws SQLException {
 		con = DbUtil.getConnection();
-		String sqlFindAll = "SELECT deptno, dname, loc from dept";
-		stmtFindAll = con.prepareStatement(sqlFindAll);
-
-//		String sqlFindById = "SELECT deptno, dname, loc from dept where deptno = ?";
-//		stmtFindById = con.prepareStatement(sqlFindById);
 	}
 
+	public int save(Dept d) throws SQLException {
+		String sqlSave = "INSERT INTO dept(deptno, dname, loc) VALUES(?,?,?)";
+		PreparedStatement stmtSave = con.prepareStatement(sqlSave);
+		stmtSave.setInt(1, d.getDeptno());
+		stmtSave.setString(2, d.getDname());
+		stmtSave.setString(3, d.getLoc());
+		int count = stmtSave.executeUpdate();
+		return count;
+	}
+
+//	2. Find Alls
+
 	public List<Dept> findAll() throws SQLException {
+		String sqlFindAll = "SELECT deptno, dname, loc from dept";
+		PreparedStatement stmtFindAll = con.prepareStatement(sqlFindAll);
 		List<Dept> list = new ArrayList<Dept>();
 		try (ResultSet rs = stmtFindAll.executeQuery()) {
 			while (rs.next()) {
@@ -47,7 +54,7 @@ public class DeptDao implements AutoCloseable { // becaus DeptDao instace is use
 		System.out.println("Enter the Department you want to seach");
 		int find = sc.nextInt();
 		String sqlFindById = "SELECT deptno, dname, loc from dept where deptno = ?";
-		stmtFindById = con.prepareStatement(sqlFindById);
+		PreparedStatement stmtFindById = con.prepareStatement(sqlFindById);
 		stmtFindById.setInt(1, find);
 		try (ResultSet rs = stmtFindById.executeQuery()) {
 			if (rs.next()) {
@@ -60,16 +67,6 @@ public class DeptDao implements AutoCloseable { // becaus DeptDao instace is use
 		}
 		sc.close();
 		return null;
-	}
-
-	public int save(Dept d) throws SQLException {
-		String sqlSave = "INSERT INTO dept(deptno, dname, loc) VALUES(?,?,?)";
-		PreparedStatement stmtSave = con.prepareStatement(sqlSave);
-		stmtSave.setInt(1, d.getDeptno());
-		stmtSave.setString(2, d.getDname());
-		stmtSave.setString(3, d.getLoc());
-		int count = stmtSave.executeUpdate();
-		return count;
 	}
 
 	public int updateDept() throws SQLException {
@@ -105,13 +102,7 @@ public class DeptDao implements AutoCloseable { // becaus DeptDao instace is use
 
 	@Override
 	public void close() throws Exception {
-
-		try {
-			if (stmtFindAll != null) {
-				stmtFindAll.close();
-			}
-		} catch (SQLException e) {
-			e.printStackTrace();
-		}
+		con.close();
 	}
 }
+

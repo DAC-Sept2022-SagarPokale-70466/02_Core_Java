@@ -47,9 +47,9 @@ public class Prg_08_Comparable {
 		class EmployeeSalComparator implements Comparator<Employee> {
 			@Override
 			public int compare(Employee e1, Employee e2) {
-				if (e1.sal == e2.sal)
+				if (e1.salary == e2.salary)
 					return 0;
-				else if (e1.sal > e2.sal)
+				else if (e1.salary > e2.salary)
 					return -1;
 				else
 					return +1;
@@ -72,9 +72,9 @@ public class Prg_08_Comparable {
 			public int compare(Employee e1, Employee e2) {
 				int diff = e1.getName().compareTo(e2.getName());
 				if (diff == 0) {
-					if (e1.getSal() == e2.getSal())
+					if (e1.getSalary() == e2.getSalary())
 						return 0;
-					if (e1.getSal() > e2.getSal())
+					if (e1.getSalary() > e2.getSalary())
 						return -1;
 					else
 						return +1;
@@ -101,4 +101,42 @@ class EmployeeNameComparator implements Comparator<Employee> {
 		return o1.getName().compareTo(o2.getName());
 	}
 
+}
+
+
+class Employee {
+	
+	int id;
+	String name;
+	double salary;
+
+	public Employee(int id, String name, double salary) {
+		this.id = id;
+		this.name = name;
+		this.salary = salary;
+	}
+	@Override
+	public String toString() {
+		return "Employee [id=" + id + ", name=" + name + ", salary=" + salary + "]";
+	}
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public double getSalary() {
+		return salary;
+	}
+	public void setSalary(int salary) {
+		this.salary = salary;
+	}
+	
+	
 }
