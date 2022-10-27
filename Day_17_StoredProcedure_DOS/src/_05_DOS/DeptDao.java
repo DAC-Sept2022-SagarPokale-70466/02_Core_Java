@@ -13,7 +13,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-public class DeptDao implements AutoCloseable { // becaus DeptDao instace is used in try with resource
+public class DeptDao implements AutoCloseable { // Because DeptDao instace is used in try with resource
 
 	private Connection con;
 
@@ -105,4 +105,3 @@ public class DeptDao implements AutoCloseable { // becaus DeptDao instace is use
 		con.close();
 	}
 }
-
