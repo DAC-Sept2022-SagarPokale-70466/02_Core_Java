@@ -16,11 +16,9 @@ public class Prg_06_Java8_Interface {
 		System.out.println("Sal = " + m.getSal());
 		
 		labor l = new labor(25, 50);
-		labor l2 = new labor(350, 50);
+		labor l2 = new labor(350, 5);
 		System.out.println("Labor sal = "+l.getSal());
 		System.out.println("Labor Insentive = "+l.getIns());
-		System.out.println("Labor sal = "+l2.getSal());
-		System.out.println("Labor Insentive = "+l2.getIns());
 	
 	}
 }

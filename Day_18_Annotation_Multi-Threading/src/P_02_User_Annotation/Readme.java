@@ -18,7 +18,7 @@ import java.lang.annotation.Target;
  */
 
 @Retention(RetentionPolicy.RUNTIME)
-@Target({ ElementType.CONSTRUCTOR, ElementType.METHOD, ElementType.TYPE })
+@Target({ ElementType.CONSTRUCTOR, ElementType.METHOD, ElementType.TYPE})
 public @interface Readme {
 	String Developer();
 

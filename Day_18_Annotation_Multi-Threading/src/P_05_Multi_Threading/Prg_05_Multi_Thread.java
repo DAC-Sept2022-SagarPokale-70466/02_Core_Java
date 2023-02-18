@@ -23,6 +23,7 @@ public class Prg_05_Multi_Thread {
 		for (int i = 1; i <= 10; i++) {
 			System.out.println("Main: " + i + ", Thread Id: " + ct.getId() + ", Name: " + ct.getName());
 			Util.delay(1000);
+			System.out.println();
 		}
 	}
 }
@@ -43,7 +44,7 @@ class YourRunnable implements Runnable {
 	public void run() {
 		Thread t = Thread.currentThread();
 		for (int i = 1; i <= 10; i++) {
-			System.out.println("MyThread: " + i + ", Thread Id: " + t.getId() + ", Name: " + t.getName());
+			System.out.println("YourThread: " + i + ", Thread Id: " + t.getId() + ", Name: " + t.getName());
 			Util.delay(1000);
 		}
 	}

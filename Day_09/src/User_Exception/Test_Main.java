@@ -34,7 +34,7 @@ public class Test_Main {
 
 	public static void main(String[] args) {
 		Division d1 = new Division(10, 0);
-		Division d2 = new Division(0,20);
+		//Division d2 = new Division(0,20);
 		try {
 			d1.PerformDivison();
 		} catch (MyUnckeckedException e) {

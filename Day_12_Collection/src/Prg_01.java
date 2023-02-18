@@ -15,9 +15,7 @@ public class Prg_01 {
 	public static void main(String[] args) {
 
 		String[] arr = { "Nilesh", "Shubham", "Pratik", "Omkar", "Prashant" };
-		int total = countTotal(arr, (String s) -> {
-			return s.length() > 6;
-		});
+		int total = countTotal(arr, (s) -> s.length() > 2);
 		System.out.println(total);
 	}
 

@@ -6,6 +6,8 @@ public class Prg_01_StaticMemberClass {
 		Outer out = new Outer();
 		Outer.Inner obj = new Outer.Inner();
 		obj.print();
+		
+//		Outer.Inner.print();
 	}
 }
 
@@ -19,7 +21,7 @@ class Outer {
 		public void print() {
 //			System.out.println("Non-Static Field = "+nonStaticField);			//  Cannot Take NonStatic Field Inside the INNER STATIC CLASS
 			System.out.println("Static Field of Outer class = " + Outer.staticField);
-			System.out.println("Static Field of Outer class = " + innerField);
+			System.out.println("Memeber Field of InnerClass = " + innerField);
 //			System.out.println("Non-Static field = "+Outer.this.nonStaticField);
 		}
 	}

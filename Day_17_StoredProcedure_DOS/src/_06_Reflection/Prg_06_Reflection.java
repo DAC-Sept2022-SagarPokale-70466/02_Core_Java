@@ -6,9 +6,12 @@
 package _06_Reflection;
 
 import java.lang.reflect.Constructor;
+
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
 import java.util.Scanner;
+
+import _05_DOS.DbUtil;
 
 public class Prg_06_Reflection {
 
@@ -47,4 +50,6 @@ public class Prg_06_Reflection {
 		}
 		
 	}
+
+	DbUtil nn = new DbUtil();
 }

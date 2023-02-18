@@ -1,4 +1,7 @@
-
+/**
+ * @author Sagar
+ *
+ */
 public class Prg_02_NonStaticMethod {
 
 	public static void main(String[] args) {
@@ -6,6 +9,7 @@ public class Prg_02_NonStaticMethod {
 		Outter outobj = new Outter();
 //		Outter.Inner obj = outobj.new Inner();					//This or below this can be apply
 		Outter.Inner obj = new Outter().new Inner();
+		obj.print();
 		
 	}
 }
@@ -21,7 +25,7 @@ class Outter {
 		{
 			System.out.println("Inner field = "+innerStatic);
 			System.out.println("Outer Field = "+Outter.this.outterfield);
-			System.out.println("Outer Static Field = "+outterfield);
+			System.out.println("Outer Static Field = "+outterStatic);
 			
 		}
 

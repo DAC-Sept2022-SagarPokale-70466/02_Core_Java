@@ -24,7 +24,7 @@ public class Prg_04_AnonymousClass {
 		Arrays.sort(arr, new Comparator<Emp1>() {		// This also work
 			@Override
 			public int compare(Emp1 e1, Emp1 e2) {
-				return e1.getRoll() - e2.getRoll();
+				return e2.getRoll() - e1.getRoll();
 			}
 		});
 

@@ -9,12 +9,10 @@ public class Prg_05_Bounded_Generic {
 		System.out.println(i);
 		
 //		Box1<String> i2 = new Box1();		// Error
-		
-		
 	}
 }	
 
-			// Extends = Upper Bond
+// Extends = Upper Bond
 class Box1<TYPE extends Number>{
 	TYPE o;
 	

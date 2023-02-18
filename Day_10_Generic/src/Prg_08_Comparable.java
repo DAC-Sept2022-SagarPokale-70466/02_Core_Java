@@ -7,17 +7,19 @@ public class Prg_08_Comparable {
 
 //		Employee e = new Employee(201, "Sagar",50000);
 //		Employee e2 = new Employee(102, "Sush", 50000);
+
 //		This compareTo method just compare the natural order
-//		int cmp = e.compareTo(e2);
+
+		//		int cmp = e.compareTo(e2);
 //		System.out.println(cmp);
 
 		Employee[] arr = { 
-							new Employee(5, "S", 823.45), 
-							new Employee(6, "H", 623.30), 
-							new Employee(2, "A", 120.39),
-							new Employee(3, "H", 983.42), 
-							new Employee(1, "B", 623.80), 
-							new Employee(4, "H", 723.39) };
+				new Employee(5, "S", 823.45), 
+				new Employee(6, "H", 623.30),
+				new Employee(2, "A", 120.39),
+				new Employee(3, "H", 983.42), 
+				new Employee(1, "B", 623.80), 
+				new Employee(4, "H", 723.39) };
 
 //		====================================================================
 
@@ -93,9 +95,10 @@ public class Prg_08_Comparable {
 }
 
 //==============================================================
-//Separate Class to Compare with Employee Name
+// Separate Class to Compare with Employee Name
 
 class EmployeeNameComparator implements Comparator<Employee> {
+
 	@Override
 	public int compare(Employee o1, Employee o2) {
 		return o1.getName().compareTo(o2.getName());
@@ -103,9 +106,8 @@ class EmployeeNameComparator implements Comparator<Employee> {
 
 }
 
-
 class Employee {
-	
+
 	int id;
 	String name;
 	double salary;
@@ -115,28 +117,33 @@ class Employee {
 		this.name = name;
 		this.salary = salary;
 	}
+
 	@Override
 	public String toString() {
 		return "Employee [id=" + id + ", name=" + name + ", salary=" + salary + "]";
 	}
+
 	public int getId() {
 		return id;
 	}
+
 	public void setId(int id) {
 		this.id = id;
 	}
+
 	public String getName() {
 		return name;
 	}
+
 	public void setName(String name) {
 		this.name = name;
 	}
+
 	public double getSalary() {
 		return salary;
 	}
+
 	public void setSalary(int salary) {
 		this.salary = salary;
 	}
-	
-	
 }

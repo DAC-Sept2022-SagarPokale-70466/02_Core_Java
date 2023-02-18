@@ -33,14 +33,15 @@ public class Prg_06_Multi_Thread {
 //		
 //		Thread t2 = new Thread(() -> threadFunc2());
 //		t2.setDaemon(true);
-//		t2.start(); // t2 is non-daemon thread
+//		t2.start(); // t2 is daemon thread
 //		
 //		for (int i = 1; i <= 3; i++) {
 //			System.out.println("Main: " + i);
 //			Util.delay(1000);
+//			System.out.println();
 //		}
 //		System.out.println("Done");
-//		
+		
 //====================================================
 		// Thread joining
 
@@ -80,18 +81,19 @@ public class Prg_06_Multi_Thread {
 
 		// Thread state and stop
 
-//		Thread t1 = new Thread(() -> threadFunc1());
-//		System.out.println("Before Thread Staring = t1.state = " + t1.getState());
-//
-//		t1.start();
-//		System.out.println("After Thread Staring = t1.state = " + t1.getState());
-//
+		Thread t1 = new Thread(() -> threadFunc1());
+		System.out.println("Before Thread Staring = t1.state = " + t1.getState());
+
+		t1.start();
+		System.out.println("After Thread Staring = t1.state = " + t1.getState());
+
 //		Thread ct = Thread.currentThread();
 //		System.out.println("Just After Declaring the Main Thread = " + ct.getState());
 //		for (int i = 1; i <= 3; i++) {
 //			System.out.println("Main: " + i + " | State: " + ct.getState());
 //			System.out.println("t1.state: " + t1.getState());
 //			Util.delay(1000);
+//			System.out.println();
 //		}
 //		t1.stop(); // forcibly stop/terminate a thread
 //		Util.delay(1000);
@@ -119,7 +121,7 @@ public class Prg_06_Multi_Thread {
 			while (true) {
 				System.out.println("Thread3 : " + i);
 				i++;
-				Thread.sleep(100);
+//				Thread.sleep(100);
 			}
 		} catch (Exception e) {
 			System.out.println("Thread3 Is Interrupted: " + ct.isInterrupted());
